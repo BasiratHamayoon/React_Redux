@@ -29,13 +29,13 @@ const taskReducer = (state = initialState, action) => {
 
 export const store = createStore(taskReducer);
 console.log(store);
-const addTask = (data) => {
+export const addTask = (data) => {
     return { type: ADD_TASK, payload: data }
 }
 store.dispatch(addTask("Item 1"))
 store.dispatch({ type: ADD_TASK, payload: "Item 2"})
 console.log(store.getState());
-const deleteTask = (id) => {
+export const deleteTask = (id) => {
     return { type: DELETE_TASK, payload : id}
 } 
 store.dispatch(deleteTask(0));
