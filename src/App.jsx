@@ -1,7 +1,9 @@
+import { Todo } from "./components/Todo"
+
 function App() {
   return (
     <>
-      <h1>Hello Redux</h1>
+      <Todo />
     </>
   )
 }
