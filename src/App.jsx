@@ -1,9 +1,9 @@
-import { Todo } from "./components/Todo"
+import { ToolkitTodo } from "./components/ToolkitTodo"
 
 function App() {
   return (
     <>
-      <Todo />
+      <ToolkitTodo />
     </>
   )
 }
