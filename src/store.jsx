@@ -1,7 +1,8 @@
-/* eslint-disable no-case-declarations */
-import { createStore, applyMiddleware } from "redux";
-import { composeWithDevTools } from "@redux-devtools/extension";
-import { thunk } from "redux-thunk";
+// /* eslint-disable no-case-declarations */
+// import { createStore, applyMiddleware } from "redux";
+// import { composeWithDevTools } from "@redux-devtools/extension";
+// import { thunk } from "redux-thunk";
+import { configureStore } from "@reduxjs/toolkit";
 const ADD_TASK = 'task/add';
 const DELETE_TASK = 'task/delete';
 const FETCH_TASK = 'task/fetch';
@@ -34,8 +35,14 @@ const taskReducer = (state = initialState, action) => {
   }
 };
 
-export const store = createStore(taskReducer, composeWithDevTools( applyMiddleware(thunk) ));
-console.log(store);
+// export const store = createStore(taskReducer, composeWithDevTools( applyMiddleware(thunk) ));
+// console.log(store);
+
+export const store = configureStore({
+  reducer: {
+    taskReducer,
+  }
+})
 export const addTask = (data) => {
     return { type: ADD_TASK, payload: data }
 }

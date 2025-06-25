@@ -13,7 +13,7 @@ export const Todo = () => {
     const handleDelete =(id) => {
         return dispatch(deleteTask(id));
     }
-    const tasks = useSelector(state => state.tasks);
+    const tasks = useSelector(state => state.taskReducer.tasks);
     const handleFetchTask = () => {
         dispatch(fetchTask())
     }
